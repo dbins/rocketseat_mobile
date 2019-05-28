@@ -4,7 +4,7 @@ import { colors } from "../../styles";
 const { height } = Dimensions.get("window");
 
 export const Container = styled.ScrollView`
-  padding: 40px 60px 40px;
+  padding: 40px 30px 40px;
   background-color: ${colors.background};
 `;
 

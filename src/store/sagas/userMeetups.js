@@ -65,7 +65,6 @@ export function* saveNewMeetup({ data }) {
     yield put(UserMeetupsActions.loadUserMeetupsRequest(data.owner_id));
     navigate("Dashboard");
   } catch (err) {
-    console.tron.log(err);
     yield put(UserMeetupsActions.saveNewMeetupFailure());
   }
 }

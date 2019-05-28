@@ -61,17 +61,12 @@ class Perfil extends Component {
     //const { loadPreferencesRequest } = this.props;
     //loadPreferencesRequest();
     //Marcar as preferencias gravadas
-    console.tron.log("DIDMOUNT");
-    console.tron.log(this.props.user);
-    console.tron.log(this.props.user.preferences);
     this.savedCheckboxes();
   }
 
   savedCheckboxes() {
     const { checkboxItems } = this.state;
     const { preferences } = this.props;
-    console.tron.log("estou aqui");
-    console.tron.log(preferences);
     if (!Object.keys(checkboxItems).length) {
       preferences.forEach(item => {
         let var_checked = false;
@@ -83,7 +78,6 @@ class Perfil extends Component {
         checkboxItems[item.id] = { isChecked: var_checked };
       });
     }
-    console.tron.log(checkboxItems);
     this.setState({ checkboxItems });
   }
 
@@ -147,7 +141,6 @@ class Perfil extends Component {
     if (continuar) {
       const userPreferences = {
         name,
-        email,
         password,
         password_confirmation: passwordConfirmation,
         preferences: selectedPreferences

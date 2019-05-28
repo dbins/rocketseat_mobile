@@ -31,6 +31,7 @@ export const Screen = styled.ScrollView`
 export const ImageUploadContainer = styled.View`
   height: 80px;
   border: 1px dashed ${colors.whiteTransparent};
+  border-radius: 1;
   justify-content: center;
   align-items: center;
 `;

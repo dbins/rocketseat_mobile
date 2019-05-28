@@ -209,7 +209,7 @@ class NovoMeetup extends Component {
         PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE
       );
     } catch (err) {
-      console.tron.log(err);
+      //console.tron.log(err);
     }
     return retorno;
   };
@@ -226,14 +226,14 @@ class NovoMeetup extends Component {
             "Precisamos de sua aprovação para selecionar imagens de seu dispositivo."
         }
       );
-      console.tron.log(granted);
+      //console.tron.log(granted);
       if (granted === PermissionsAndroid.RESULTS.GRANTED) {
         retorno = true;
       } else {
         //console.log("NEGADO");
       }
     } catch (err) {
-      console.tron.log(err);
+      //console.tron.log(err);
     }
     return retorno;
   };
@@ -257,7 +257,7 @@ class NovoMeetup extends Component {
         })
         .catch(err => {
           //Error Loading Images
-          console.tron.log(err);
+          //console.tron.log(err);
         });
     } else {
       alert("Você precisa autorizar para poder selecionar imagens!");
@@ -293,6 +293,7 @@ class NovoMeetup extends Component {
             multiline
             numberOfLines={4}
           />
+          <Label>Data/hora</Label>
           <TouchableOpacity
             onPress={() => {
               this.openModal();
@@ -321,7 +322,7 @@ class NovoMeetup extends Component {
             onChangeText={value => this.setState({ location: value })}
           />
 
-          <SectionTitle>Tema do meetup</SectionTitle>
+          <Label>Tema do meetup</Label>
           <CheckBox
             items={preferences}
             checkboxItems={checkboxItems}

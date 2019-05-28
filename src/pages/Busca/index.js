@@ -31,6 +31,10 @@ class Busca extends Component {
     tabBarIcon: TabIcon
   };
 
+  state = {
+    mensagem: ""
+  };
+
   static propTypes = {
     searchMeetupsRequest: PropTypes.func.isRequired,
     meetups: PropTypes.objectOf(PropTypes.array).isRequired
@@ -42,6 +46,9 @@ class Busca extends Component {
     const searchTerm = term || "";
     if (searchTerm.length > 3) {
       searchMeetupsRequest(searchTerm);
+      this.setState({ mensagem: "Nenhum meetup encontrado" });
+    } else {
+      this.setState({ mensagem: "" });
     }
   };
 
@@ -63,10 +70,10 @@ class Busca extends Component {
             />
           </SearchBarContainer>
           {meetups && meetups.search.length > 0 ? (
-            <List data={meetups.search} inscricao={true}/>
+            <List data={meetups.search} inscricao={true} />
           ) : (
             <EmptyStateContainer>
-              <EmptyStateText>Nenhum meetup encontrado.</EmptyStateText>
+              <EmptyStateText>{this.state.mensagem}</EmptyStateText>
             </EmptyStateContainer>
           )}
         </Container>

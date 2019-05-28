@@ -6,7 +6,7 @@ var height = Dimensions.get("window").height;
 import Icon from "react-native-vector-icons/FontAwesome5";
 
 export const Container = styled.View`
-  padding: 40px 60px 40px;
+  padding: 40px 30px 40px;
   background-color: ${colors.background};
   height: ${height};
 `;
